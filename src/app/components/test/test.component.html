@@ -1,0 +1,5 @@
+<ul *ngIf="!isVisible">
+    <li *ngFor="let item of data">
+        {{item.fName | uppercase}} {{item.lName | uppercase}}
+    </li>
+</ul>
