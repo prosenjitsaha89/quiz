@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Prosenjit",
+      "lastName": "Saha",
+      "email": "prosenjit@mail.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Shouvik",
+      "lastName": "Chatterjee",
+      "email": "shouvik@mail.com"
+    },
+    {
+      "id": 3,
+      "firstName": "Nabanita",
+      "lastName": "Roy Chowdhury",
+      "email": "nabanita@mail.com"
+    },
+    {
+      "id": 4,
+      "firstName": "Souvick",
+      "lastName": "Dey",
+      "email": "souvick@mail.com"
+    }
+  ]
+}
