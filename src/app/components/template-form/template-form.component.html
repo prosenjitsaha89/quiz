@@ -1,0 +1,55 @@
+{{loginForm.value | json}}
+<br><br>
+{{'prosenjit' | uppercase}}
+{{date | date:"MM/dd/yy"}}
+{{myObject | json}}
+{{myCurrency | currency:"INR"}}
+<br><br>
+{{backendObj | json}}
+<br><br>
+
+<form #loginForm="ngForm">
+
+  <div 
+    class="form-group">
+    <label>
+        Email address
+    </label>
+    <input 
+        [(ngModel)]="backendObj.email"
+        minlength="5"
+        maxlength="10"
+        name="email"
+        required
+        type="email" 
+        class="form-control"
+        #emailControl="ngModel">
+    <small 
+        *ngIf="emailControl.errors?.minlength && emailControl.touched"
+        class="form-text text-danger">
+        Filed has minimum length 5!
+    </small>
+  </div>
+
+  <div 
+    class="form-group">
+    <label>
+        Password
+    </label>
+    <input 
+        [(ngModel)]="backendObj.password"
+        name="password"
+        required
+        type="password" 
+        class="form-control">
+  </div>
+
+  <button 
+    (click)="submitForm(loginForm)"
+    [disabled]="loginForm.invalid"
+    type="button" 
+    class="btn btn-primary">
+        Submit
+    </button>
+
+</form>
