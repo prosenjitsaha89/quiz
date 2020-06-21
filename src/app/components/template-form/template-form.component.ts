@@ -19,9 +19,17 @@ export class TemplateFormComponent implements OnInit {
   }
 
   submitForm(loginForm) {
-    console.log('Backend: ', this.backendObj);
-    console.log('FORM: ', loginForm);
+    console.log('submitForm()');
 
+    // console.log('Backend: ', this.backendObj);
+    console.log('FORM: ', loginForm);
+  }
+
+  clearForm() {
+    console.log('clearForm()');
+
+    this.backendObj.email = '';
+    this.backendObj.password = '';
   }
 
 }
