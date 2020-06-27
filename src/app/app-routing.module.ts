@@ -5,6 +5,7 @@ import { TestComponent } from './components/test/test.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DynamicReactiveComponent } from './components/dynamic-reactive/dynamic-reactive.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,11 @@ const routes: Routes = [
   },
   {
     path: 'reactive',
-    component: ReactiveFormComponent
+    component: ReactiveFormComponent,
+  },
+  {
+    path: 'reactive-array',
+    component: DynamicReactiveComponent,
   },
   {
     path: '**',

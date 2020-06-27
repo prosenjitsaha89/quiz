@@ -1,0 +1,36 @@
+<form [formGroup]="userForm">
+    <div *ngFor="let user of userForm.get('users').controls" class="form-group">
+        <div class="row" [formGroup]="user">
+            <div class="col-6">
+                <label>Name</label>
+                <input 
+                    formControlName="name"
+                    type="text" 
+                    class="form-control">
+            </div>
+            <div class="col-6">
+                <label>Last Name</label>
+                <input 
+                    formControlName="lastName"
+                    type="text" 
+                    class="form-control">
+            </div>
+        </div>
+    </div>
+</form>
+
+<button 
+    (click)="onAddUser()" 
+    type="button" 
+    class="btn btn-primary ml-2">
+    Add User
+</button>
+
+<button 
+    (click)="onDelUser()" 
+    type="button" 
+    class="btn btn-primary ml-2">
+    Delete User
+</button>
+
+{{userForm.value | json}}

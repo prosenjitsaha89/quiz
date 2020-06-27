@@ -9,6 +9,7 @@ import { TestComponent } from './components/test/test.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DynamicReactiveComponent } from './components/dynamic-reactive/dynamic-reactive.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     TestComponent,
     TemplateFormComponent,
     ReactiveFormComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DynamicReactiveComponent
   ],
   imports: [
     BrowserModule,
