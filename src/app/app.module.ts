@@ -10,6 +10,7 @@ import { TemplateFormComponent } from './components/template-form/template-form.
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DynamicReactiveComponent } from './components/dynamic-reactive/dynamic-reactive.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DynamicReactiveComponent } from './components/dynamic-reactive/dynamic-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
