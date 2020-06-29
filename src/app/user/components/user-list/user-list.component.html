@@ -1,49 +1,78 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-striped table-dark mt-5">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Department</th>
-                        <th scope="col">Designation</th>
-                        <th scope="col">&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let emp of employeeList">
-                        <td>{{emp.id}}</td>
-                        <td>{{emp.firstName}}</td>
-                        <td>{{emp.age}}</td>
-                        <td>{{emp.department}}</td>
-                        <td>{{emp.designation}}</td>
-                        <td>
-                            <button 
-                                (click)="onDelEmployee(emp.id)"
-                                mat-icon-button>
-                                <mat-icon>delete</mat-icon>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <div *ngIf="!isLoader; else showLoader">  <!-- Added by Estilo 29/06/2020 -->
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-dark mt-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">&nbsp;</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let emp of employeeList">
+                            <!-- Added by Estilo 29/06/2020 -->
+                            <td>
+                                <mat-radio-group
+                                    [(ngModel)]="selectedEmp"
+                                    color = "accent"
+                                    name="mat-radio-group"
+                                    class="d-flex justify-content-center align-items-center">
+                                    <mat-radio-button [value]="emp.id"></mat-radio-button>
+                                </mat-radio-group>
+                            </td>
+                            <!-- ---------------------------------- -->
+                            <td>{{emp.id}}</td>
+                            <td>{{emp.firstName}}</td>
+                            <td>{{emp.age}}</td>
+                            <td>{{emp.department}}</td>
+                            <td>{{emp.designation}}</td>
+                            <td>
+                                <button
+                                    (click)="onDelEmployee(emp.id)"
+                                    mat-icon-button>
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <button 
-                mat-raised-button
-                color="accent"
-                (click)="onAdd()"
-                type="button">Add</button>
-            <button 
-                mat-raised-button
-                color="accent"
-                (click)="onEdit()"
-                type="button" 
-                class="ml-2">Edit</button>
+        <div class="row">
+            <div class="col-12">
+                <button
+                    mat-raised-button
+                    color="accent"
+                    (click)="onAdd()"
+                    type="button">Add</button>
+                <button
+                    mat-raised-button
+                    color="accent"
+                    (click)="onEdit()"
+                    type="button"
+                    class="ml-2">Edit</button>
+            </div>
         </div>
+        <div class="mt-2">selectedEmp: {{selectedEmp}}</div>  <!-- Added by Estilo 29/06/2020 -->
     </div>
+      <!-- Added by Estilo 29/06/2020 -->
+    <ng-template #showLoader>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <mat-progress-spinner
+                class="example-margin"
+                [color]="color"
+                [mode]="mode"
+                [value]="value">
+            </mat-progress-spinner>
+        </div>
+    </ng-template>
+    <!-- ---------------------------- -->
 </div>
