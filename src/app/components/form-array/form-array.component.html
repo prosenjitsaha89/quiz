@@ -1,0 +1,17 @@
+<h1 class="text-center">Form Array</h1>
+<form
+    class="form-group"
+    [formGroup]='form'>
+    <label>Enter name: </label>
+    <input
+        type="text"
+        class='form-control'
+        formControlName="name"
+        (keyup.enter)="onKeyUp()">
+    <div
+        class="bg-warning border d-flex justify-content-between"
+        *ngFor="let employee of employees; let i=index;">
+        <span>{{employee}}</span>
+        <span (click)="removeEmp(i)">delete</span>
+    </div>
+</form>

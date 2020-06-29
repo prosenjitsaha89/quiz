@@ -11,6 +11,8 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DynamicReactiveComponent } from './components/dynamic-reactive/dynamic-reactive.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormArrayComponent } from './components/form-array/form-array.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TemplateFormComponent,
     ReactiveFormComponent,
     NotFoundComponent,
-    DynamicReactiveComponent
+    DynamicReactiveComponent,
+    FormArrayComponent
   ],
   imports: [
     BrowserModule,
