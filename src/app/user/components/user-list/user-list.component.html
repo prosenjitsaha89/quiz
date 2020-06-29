@@ -4,43 +4,24 @@
             <table class="table table-striped table-dark mt-5">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Designation</th>
                         <th scope="col">&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                    <tr *ngFor="let emp of employeeList">
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.firstName}}</td>
+                        <td>{{emp.age}}</td>
+                        <td>{{emp.department}}</td>
+                        <td>{{emp.designation}}</td>
                         <td>
                             <button 
-                                mat-icon-button>
-                                <mat-icon>delete</mat-icon>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td><button 
-                                mat-icon-button>
-                                <mat-icon>delete</mat-icon>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@fat</td>
-                        <td><button 
+                                (click)="onDelEmployee(emp.id)"
                                 mat-icon-button>
                                 <mat-icon>delete</mat-icon>
                             </button>
@@ -53,13 +34,16 @@
     <div class="row">
         <div class="col-12">
             <button 
+                mat-raised-button
+                color="accent"
                 (click)="onAdd()"
-                type="button" 
-                class="btn btn-primary">Add</button>
+                type="button">Add</button>
             <button 
+                mat-raised-button
+                color="accent"
                 (click)="onEdit()"
                 type="button" 
-                class="btn btn-primary ml-2">Edit</button>
+                class="ml-2">Edit</button>
         </div>
     </div>
 </div>

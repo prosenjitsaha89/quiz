@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DynamicReactiveComponent } from './components/dynamic-reactive/dynamic-reactive.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormArrayComponent } from './components/form-array/form-array.component';
-
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { FormArrayComponent } from './components/form-array/form-array.component
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

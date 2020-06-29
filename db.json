@@ -4,31 +4,86 @@
       "id": 1,
       "firstName": "Prosenjit",
       "lastName": "Saha",
-      "email": "prosenjit@mail.com"
+      "email": "prosenjit@mail.com",
+      "age": "31",
+      "cell": "8013659681",
+      "address": {
+        "building": "River Dale",
+        "landMark": "Ganesh Temple",
+        "post": "Nilje Gaon",
+        "state": "Maharashtra",
+        "pinCode": "421204"
+      },
+      "department": "Software",
+      "designation": "Developer"
     },
     {
       "id": 2,
       "firstName": "Shouvik",
       "lastName": "Chatterjee",
-      "email": "shouvik@mail.com"
+      "email": "shouvik@mail.com",
+      "age": "31",
+      "cell": "8013659681",
+      "address": {
+        "building": "River Dale",
+        "landMark": "Ganesh Temple",
+        "post": "Nilje Gaon",
+        "state": "Maharashtra",
+        "pinCode": "421204"
+      },
+      "department": "Software",
+      "designation": "Developer"
     },
     {
       "id": 3,
       "firstName": "Nabanita",
       "lastName": "Roy Chowdhury",
-      "email": "nabanita@mail.com"
+      "email": "nabanita@mail.com",
+      "age": "31",
+      "cell": "8013659681",
+      "address": {
+        "building": "River Dale",
+        "landMark": "Ganesh Temple",
+        "post": "Nilje Gaon",
+        "state": "Maharashtra",
+        "pinCode": "421204"
+      },
+      "designation": "Developer",
+      "department": "Software"
     },
     {
       "id": 4,
       "firstName": "Souvick",
       "lastName": "Dey",
-      "email": "souvick@mail.com"
+      "email": "souvick@mail.com",
+      "age": "31",
+      "cell": "8013659681",
+      "address": {
+        "building": "River Dale",
+        "landMark": "Ganesh Temple",
+        "post": "Nilje Gaon",
+        "state": "Maharashtra",
+        "pinCode": "421204"
+      },
+      "department": "Software",
+      "designation": "Developer"
     },
     {
       "id": 5,
       "firstName": "Arup",
       "lastName": "Sarkar",
-      "email": "arup@mail.com"
+      "email": "arup@mail.com",
+      "age": "31",
+      "cell": "8013659681",
+      "address": {
+        "building": "River Dale",
+        "landMark": "Ganesh Temple",
+        "post": "Nilje Gaon",
+        "state": "Maharashtra",
+        "pinCode": "421204"
+      },
+      "department": "Software",
+      "designation": "Developer"
     }
   ]
 }
