@@ -22,14 +22,14 @@
       "firstName": "Shouvik",
       "lastName": "Chatterjee",
       "email": "shouvik@mail.com",
-      "age": "31",
-      "cell": "8013659681",
+      "age": "33",
+      "cell": "9874894016",
       "address": {
-        "building": "River Dale",
-        "landMark": "Ganesh Temple",
-        "post": "Nilje Gaon",
-        "state": "Maharashtra",
-        "pinCode": "421204"
+        "building": "Basanta Nibas",
+        "landMark": "Sukanta Pally",
+        "post": "Andal",
+        "state": "West Bengal",
+        "pinCode": "713321"
       },
       "department": "Software",
       "designation": "Developer"
