@@ -1,1 +1,106 @@
-<p>user-form works!</p>
+<div class="container">
+
+    <ng-container *ngIf="!isLoader; else showLoader">
+        <form *ngIf="empForm" [formGroup]="empForm">
+
+            <div class="row mt-5">
+                <div class="col-6">
+                    <div
+                        class="form-group">
+                        <label>
+                            First Name
+                        </label>
+                        <input
+                            formControlName="firstName"
+                            type="text"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div
+                        class="form-group">
+                        <label>
+                            Last Name
+                        </label>
+                        <input
+                            formControlName="lastName"
+                            type="text"
+                            class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-4">
+                    <div
+                        class="form-group">
+                        <label>
+                            Email
+                        </label>
+                        <input
+                            formControlName="email"
+                            type="text"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div
+                        class="form-group">
+                        <label>
+                            Mobile
+                        </label>
+                        <input
+                            formControlName="cell"
+                            type="text"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div
+                        class="form-group">
+                        <label>
+                            Age
+                        </label>
+                        <input
+                            formControlName="age"
+                            type="text"
+                            class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <button
+                        mat-raised-button
+                        [disabled]="empForm.invalid"
+                        color="accent"
+                        (click)="onSubmit()"
+                        type="button">Submit</button>
+                    <button
+                        mat-raised-button
+                        color="accent"
+                        (click)="onReset()"
+                        type="button"
+                        class="ml-2">Reset</button>
+                    <button
+                        mat-raised-button
+                        color="accent"
+                        (click)="onCancel()"
+                        type="button"
+                        class="ml-2">Cancel</button>
+                </div>
+            </div>
+
+        </form>
+    </ng-container>
+
+    <ng-template #showLoader>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <mat-progress-spinner
+                color="accent"
+                mode="indeterminate">
+            </mat-progress-spinner>
+        </div>
+    </ng-template>
+
+</div>

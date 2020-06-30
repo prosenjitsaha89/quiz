@@ -1,32 +1,31 @@
 <div class="container">
-    <div *ngIf="!isLoader; else showLoader">  <!-- Added by Estilo 29/06/2020 -->
+
+    <ng-container *ngIf="!isLoader; else showLoader">
         <div class="row">
             <div class="col-12">
                 <table class="table table-striped table-dark mt-5">
                     <thead>
                         <tr>
-                            <th scope="col">&nbsp;</th>
+                            <th width="60px" scope="col">&nbsp;</th>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">Age</th>
                             <th scope="col">Department</th>
                             <th scope="col">Designation</th>
-                            <th scope="col">&nbsp;</th>
+                            <th width="60px" scope="col">&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let emp of employeeList">
-                            <!-- Added by Estilo 29/06/2020 -->
                             <td>
                                 <mat-radio-group
-                                    [(ngModel)]="selectedEmp"
-                                    color = "accent"
-                                    name="mat-radio-group"
-                                    class="d-flex justify-content-center align-items-center">
+                                    [(ngModel)]="selectedEmpId"
+                                    name="row-select"
+                                    class="d-flex justify-content-center
+                                    align-items-center">
                                     <mat-radio-button [value]="emp.id"></mat-radio-button>
                                 </mat-radio-group>
                             </td>
-                            <!-- ---------------------------------- -->
                             <td>{{emp.id}}</td>
                             <td>{{emp.firstName}}</td>
                             <td>{{emp.age}}</td>
@@ -43,7 +42,6 @@
 
                     </tbody>
                 </table>
-
             </div>
         </div>
         <div class="row">
@@ -55,24 +53,22 @@
                     type="button">Add</button>
                 <button
                     mat-raised-button
+                    [disabled]="!selectedEmpId"
                     color="accent"
                     (click)="onEdit()"
                     type="button"
                     class="ml-2">Edit</button>
             </div>
         </div>
-        <div class="mt-2">selectedEmp: {{selectedEmp}}</div>  <!-- Added by Estilo 29/06/2020 -->
-    </div>
-      <!-- Added by Estilo 29/06/2020 -->
+    </ng-container>
+
     <ng-template #showLoader>
         <div class="d-flex justify-content-center align-items-center vh-100">
             <mat-progress-spinner
-                class="example-margin"
-                [color]="color"
-                [mode]="mode"
-                [value]="value">
+                color="accent"
+                mode="indeterminate">
             </mat-progress-spinner>
         </div>
     </ng-template>
-    <!-- ---------------------------- -->
+
 </div>
