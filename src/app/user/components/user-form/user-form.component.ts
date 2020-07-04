@@ -69,51 +69,7 @@ export class UserFormComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private dataResolverService: DataResolverService) {
 
-  }
-
-  ngDoCheck() {
-    console.log('ngDoCheck()');
-    console.log('empForm: ',this.empForm);
-    /*console.log('paramId: ', this.paramId);
-    
-    if (this.paramId) {
-      this.isResetDisabled = false;
     }
-    if (this.empForm) {
-      this.empForm.valueChanges.subscribe(empObj => {
-        let valuesArr = Object.values(empObj);
-        let isNotBlankFound = false;
-
-        for (let i = 0; i < valuesArr.length; i++) {
-
-          if (i === 5) {
-            let subArr = Object.values(valuesArr[5]);
-
-            for (let j = 0; j < subArr.length; j++) {
-              if (subArr[j] !== '') {
-                this.isResetDisabled = false;
-                isNotBlankFound = true;
-                break;
-              } else {
-                this.isResetDisabled = true;
-              }
-            }
-          }
-          if (isNotBlankFound) {
-            isNotBlankFound = false;
-            break;
-          }
-          if (i !== 5 && valuesArr[i] !== '') {
-            this.isResetDisabled = false;
-            break;
-          } else {
-            this.isResetDisabled = true;
-          }
-        }
-      })
-    }*/
-    
-  }
 
   ngOnInit() {
     console.log('ngOnInit()');
