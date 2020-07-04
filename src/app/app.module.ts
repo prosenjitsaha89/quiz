@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DynamicReactiveComponent } from './components/dynamic-reactive/dynamic-reactive.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormArrayComponent } from './components/form-array/form-array.component';
+import { TodoComponent } from './components/todo/todo.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,9 @@ import { FormArrayComponent } from './components/form-array/form-array.component
     ReactiveFormComponent,
     NotFoundComponent,
     DynamicReactiveComponent,
-    FormArrayComponent
+    FormArrayComponent,
+    TodoComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +38,8 @@ import { FormArrayComponent } from './components/form-array/form-array.component
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

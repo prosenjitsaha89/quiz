@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div class="form-group pt-5">
+        <label for="exampleInputEmail1">Add To Do</label>
+        <input
+            type="text"
+            class="form-control"
+            (keyup.enter)="addToDoList($event.target.value)">
+    </div>
+
+    <span *ngIf="isHint">1 todo item has been deleted!</span>
+
+    <div *ngIf="todoList.length" class="row p-5">
+        <div class="col-4">
+            <app-todo-list 
+                [list]="todoList" 
+                (itemDelete)="handleItemDel($event)">
+            </app-todo-list>
+        </div>
+    </div>
+    
+</div>
