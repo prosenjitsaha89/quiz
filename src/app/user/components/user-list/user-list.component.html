@@ -1,9 +1,9 @@
-<div class="container">
-
+<div class="container mt-2">    
     <ng-container *ngIf="!isLoader; else showLoader">
+        <h1 class="text-center">Employee Details</h1>
         <div class="row">
             <div class="col-12">
-                <table class="table table-striped table-dark mt-5">
+                <table class="table table-striped table-dark mt-3">
                     <thead>
                         <tr>
                             <th width="60px" scope="col">&nbsp;</th>
@@ -39,7 +39,6 @@
                                 </button>
                             </td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -70,5 +69,4 @@
             </mat-progress-spinner>
         </div>
     </ng-template>
-
 </div>

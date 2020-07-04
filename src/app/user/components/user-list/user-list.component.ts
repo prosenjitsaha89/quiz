@@ -45,7 +45,6 @@ export class UserListComponent implements OnInit {
     console.log('Delete Fired!');
 
     this.isLoader = true;
-
     this.dataResolverService.delEmployee(id).subscribe(
       response => {
         console.log('yyyy Response', response);
@@ -60,16 +59,13 @@ export class UserListComponent implements OnInit {
 
   onAdd() {
     console.log('Add Fired!');
-
     // this.router.navigate(['user', 'add']);
     this.router.navigate(['/user/add']);
   }
 
   onEdit() {
     console.log('Edit Fired!');
-
     // this.router.navigate(['user', 'add', this.selectedEmpId]);
     this.router.navigate([`/user/edit/${this.selectedEmpId}`]);
   }
-
 }

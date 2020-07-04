@@ -1,9 +1,8 @@
-<div class="container">
-
+<div class="container mt-2">
     <ng-container *ngIf="!isLoader; else showLoader">
+        <h1 class="text-center">{{heading}}</h1>
         <form *ngIf="empForm" [formGroup]="empForm">
-
-            <div class="row mt-5">
+            <div class="row mt-3">
                 <div class="col-6">
                     <div
                         class="form-group">
@@ -14,6 +13,22 @@
                             formControlName="firstName"
                             type="text"
                             class="form-control">
+                        <div
+                            *ngIf="empForm.get('firstName').touched &&
+                            empForm.get('firstName').invalid" class="alert
+                            alert-danger">
+                            <small
+                                *ngIf="empForm.get('firstName').hasError('required')">First
+                                Name
+                                is
+                                required.</small>
+                            <small
+                                *ngIf="empForm.get('firstName').hasError('minlength')">Please
+                                enter
+                                minimum
+                                {{empForm.get('firstName').errors.minlength.requiredLength}}
+                                characters.</small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6">
@@ -26,6 +41,21 @@
                             formControlName="lastName"
                             type="text"
                             class="form-control">
+                        <div *ngIf="empForm.get('lastName').touched &&
+                            empForm.get('lastName').invalid" class="alert
+                            alert-danger">
+                            <small
+                                *ngIf="empForm.get('lastName').hasError('required')">Last
+                                Name
+                                is
+                                required.</small>
+                            <small
+                                *ngIf="empForm.get('lastName').hasError('minlength')">Please
+                                enter
+                                minimum
+                                {{empForm.get('lastName').errors.minlength.requiredLength}}
+                                characters.</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,6 +70,18 @@
                             formControlName="email"
                             type="text"
                             class="form-control">
+                        <div *ngIf="empForm.get('email').touched &&
+                            empForm.get('email').invalid" class="alert
+                            alert-danger">
+                            <small
+                                *ngIf="empForm.get('email').hasError('required')">Email
+                                is
+                                required.</small>
+                            <small
+                                *ngIf="empForm.get('email').hasError('email')">Please
+                                enter valid email.
+                            </small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-4">
@@ -50,8 +92,20 @@
                         </label>
                         <input
                             formControlName="cell"
-                            type="text"
+                            type="tel"
                             class="form-control">
+                        <div *ngIf="empForm.get('cell').touched &&
+                            empForm.get('cell').invalid" class="alert
+                            alert-danger">
+                            <small
+                                *ngIf="empForm.get('cell').hasError('required')">Mobile
+                                is
+                                required.</small>
+                            <small
+                                *ngIf="empForm.get('cell').hasError('pattern')">Please
+                                enter valid mobile number.
+                            </small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-4">
@@ -59,38 +113,275 @@
                         class="form-group">
                         <label>
                             Age
-                        </label>
+                        </label>                        
                         <input
                             formControlName="age"
                             type="text"
                             class="form-control">
+                        <div *ngIf="empForm.get('age').touched &&
+                            empForm.get('age').value>150" class="alert
+                            alert-danger">
+                            <small>Age cannot be more than 150.</small>
+                        </div>
+                        <div *ngIf="empForm.get('age').touched &&
+                            empForm.get('age').value<18 && empForm.get('age').value!=''" class="alert
+                            alert-danger">
+                            <small>Age cannot be less than 18.</small>
+                        </div>
+                        <div *ngIf="empForm.get('age').touched &&
+                            empForm.get('age').invalid" class="alert
+                            alert-danger">
+                            <small
+                                *ngIf="empForm.get('age').hasError('required')">Age
+                                is
+                                required.</small>                            
+                            <small
+                                *ngIf="empForm.get('age').hasError('pattern')">Age
+                                should be numeric.
+                            </small>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row mt-2">
+                <div class="col-12" formGroupName="address">
+                    <label>Address:</label>
+                    <div class="row m-2">
+                        <div class="col-6">
+                            <div
+                                class="form-group">
+                                <label>
+                                    Building
+                                </label>
+                                <input
+                                    formControlName="building"
+                                    type="text"
+                                    class="form-control">
+                                <div
+                                    *ngIf="empForm.get('address.building').touched
+                                    && empForm.get('address.building').invalid"
+                                    class="alert alert-danger">
+                                    <small
+                                        *ngIf="empForm.get('address.building').hasError('required')">Building
+                                        is
+                                        required.</small>
+                                    <small
+                                        *ngIf="empForm.get('address.building').hasError('minlength')">Please
+                                        enter
+                                        minimum
+                                        {{empForm.get('address.building').errors.minlength.requiredLength}}
+                                        characters.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="form-group">
+                                <label>
+                                    Landmark
+                                </label>
+                                <input
+                                    formControlName="landMark"
+                                    type="text"
+                                    class="form-control">
+                                <div
+                                    *ngIf="empForm.get('address.landMark').touched
+                                    &&
+                                    empForm.get('address.landMark').invalid"
+                                    class="alert alert-danger">
+                                    <small
+                                        *ngIf="empForm.get('address.landMark').hasError('required')">Landmark
+                                        is
+                                        required.</small>
+                                    <small
+                                        *ngIf="empForm.get('address.landMark').hasError('minlength')">Please
+                                        enter
+                                        minimum
+                                        {{empForm.get('address.landMark').errors.minlength.requiredLength}}
+                                        characters.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-2">
+                        <div class="col-4">
+                            <div
+                                class="form-group">
+                                <label>
+                                    Post
+                                </label>
+                                <input
+                                    formControlName="post"
+                                    type="text"
+                                    class="form-control">
+                                <div *ngIf="empForm.get('address.post').touched
+                                    &&
+                                    empForm.get('address.post').invalid"
+                                    class="alert alert-danger">
+                                    <small
+                                        *ngIf="empForm.get('address.post').hasError('required')">Post
+                                        is
+                                        required.</small>
+                                    <small
+                                        *ngIf="empForm.get('address.post').hasError('minlength')">Please
+                                        enter
+                                        minimum
+                                        {{empForm.get('address.post').errors.minlength.requiredLength}}
+                                        characters.</small>
 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div
+                                class="form-group">
+                                <label>
+                                    State
+                                </label>                                
+                                <div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Choose an option</mat-label>
+                                        <mat-select formControlName="state">
+                                            <mat-option *ngFor="let st of states" [value]="st" selected = "state === st">
+                                                {{st}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>                            
+                                </div>
+                                <div *ngIf="empForm.get('address.state').touched
+                                    &&
+                                    empForm.get('address.state').invalid"
+                                    class="alert alert-danger">
+                                    <small
+                                        *ngIf="empForm.get('address.state').hasError('required')">State
+                                        is
+                                        required.</small>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div
+                                class="form-group">
+                                <label>
+                                    Pincode
+                                </label>
+                                <!--type="text" because minLength and maxLength validators don't work for number type -->
+                                <input
+                                    formControlName="pinCode"
+                                    type="text"
+                                    class="form-control">
+                                <div
+                                    *ngIf="empForm.get('address.pinCode').touched
+                                    &&
+                                    empForm.get('address.pinCode').invalid"
+                                    class="alert alert-danger">
+                                    <small
+                                        *ngIf="empForm.get('address.pinCode').hasError('required')">Pincode
+                                        is
+                                        required.</small>
+                                    <small
+                                        *ngIf="empForm.get('address.pinCode').hasError('minlength')">Please
+                                        enter
+                                        minimum
+                                        {{empForm.get('address.pinCode').errors.minlength.requiredLength}}
+                                        digits.
+                                    </small>
+                                    <small
+                                        *ngIf="empForm.get('address.pinCode').hasError('maxlength')">Pincode
+                                        cannot have more than
+                                        {{empForm.get('address.pinCode').errors.maxlength.requiredLength}}
+                                        digits.
+                                    </small>
+                                    <small
+                                        *ngIf="empForm.get('address.pinCode').hasError('pattern')">Pincode
+                                        should be numeric.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-6">
+                    <div
+                        class="form-group">
+                        <label>
+                            Department
+                        </label>
+                        <input
+                            formControlName="department"
+                            type="text"
+                            class="form-control">
+                        <div *ngIf="empForm.get('department').touched &&
+                            empForm.get('department').invalid" class="alert
+                            alert-danger">
+                            <small
+                                *ngIf="empForm.get('department').hasError('required')">Department
+                                is
+                                required.</small>
+                            <small
+                                *ngIf="empForm.get('department').hasError('minlength')">Please
+                                enter
+                                minimum
+                                {{empForm.get('department').errors.minlength.requiredLength}}
+                                characters.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div
+                        class="form-group">
+                        <label>
+                            Designation
+                        </label>
+                        <input
+                            formControlName="designation"
+                            type="text"
+                            class="form-control">
+                        <div *ngIf="empForm.get('designation').touched &&
+                            empForm.get('designation').invalid" class="alert
+                            alert-danger">
+                            <small
+                                *ngIf="empForm.get('designation').hasError('required')">Designation
+                                is
+                                required.</small>
+                            <small
+                                *ngIf="empForm.get('designation').hasError('minlength')">Please
+                                enter
+                                minimum
+                                {{empForm.get('designation').errors.minlength.requiredLength}}
+                                characters.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12">
                     <button
-                        mat-raised-button
                         [disabled]="empForm.invalid"
-                        color="accent"
                         (click)="onSubmit()"
-                        type="button">Submit</button>
-                    <button
                         mat-raised-button
                         color="accent"
+                        type="button">{{submitButtonValue}}</button>
+                    <button
+                        [disabled]="empForm.pristine && !empForm.touched"
                         (click)="onReset()"
+                        mat-raised-button
+                        color="accent"
                         type="button"
                         class="ml-2">Reset</button>
                     <button
+                        (click)="onCancel()"
                         mat-raised-button
                         color="accent"
-                        (click)="onCancel()"
                         type="button"
                         class="ml-2">Cancel</button>
                 </div>
             </div>
-
         </form>
     </ng-container>
 

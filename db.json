@@ -18,12 +18,11 @@
       "designation": "Developer"
     },
     {
-      "id": 2,
       "firstName": "Shouvik",
       "lastName": "Chatterjee",
       "email": "shouvik@mail.com",
-      "age": "33",
       "cell": "9874894016",
+      "age": "33",
       "address": {
         "building": "Basanta Nibas",
         "landMark": "Sukanta Pally",
@@ -32,32 +31,15 @@
         "pinCode": "713321"
       },
       "department": "Software",
-      "designation": "Developer"
+      "designation": "Developer",
+      "id": 2
     },
     {
-      "id": 3,
       "firstName": "Nabanita",
       "lastName": "Roy Chowdhury",
       "email": "nabanita@mail.com",
-      "age": "31",
       "cell": "8013659681",
-      "address": {
-        "building": "River Dale",
-        "landMark": "Ganesh Temple",
-        "post": "Nilje Gaon",
-        "state": "Maharashtra",
-        "pinCode": "421204"
-      },
-      "designation": "Developer",
-      "department": "Software"
-    },
-    {
-      "id": 4,
-      "firstName": "Souvick",
-      "lastName": "Dey",
-      "email": "souvick@mail.com",
       "age": "31",
-      "cell": "8013659681",
       "address": {
         "building": "River Dale",
         "landMark": "Ganesh Temple",
@@ -66,7 +48,25 @@
         "pinCode": "421204"
       },
       "department": "Software",
-      "designation": "Developer"
+      "designation": "Developer",
+      "id": 3
+    },
+    {
+      "firstName": "Souvick",
+      "lastName": "Dey",
+      "email": "souvick@mail.com",
+      "cell": "6584712699",
+      "age": "31",
+      "address": {
+        "building": "River Dale",
+        "landMark": "Ganesh Temple",
+        "post": "Nilje Gaon",
+        "state": "Maharashtra",
+        "pinCode": "421204"
+      },
+      "department": "Software",
+      "designation": "Developer",
+      "id": 4
     },
     {
       "firstName": "Arup",
@@ -84,6 +84,23 @@
       "department": "Software",
       "designation": "Developer",
       "id": 5
+    },
+    {
+      "firstName": "sdssds",
+      "lastName": "aadsa",
+      "email": "hh@ff.dd",
+      "cell": "9874894016",
+      "age": "43",
+      "address": {
+        "building": "asd2sd",
+        "landMark": "sdsd",
+        "post": "sasd",
+        "state": "West Bengal",
+        "pinCode": "713321"
+      },
+      "department": "sdasds",
+      "designation": "asdaas",
+      "id": 6
     }
   ]
 }
