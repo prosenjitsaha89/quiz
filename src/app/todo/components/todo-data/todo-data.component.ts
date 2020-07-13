@@ -8,6 +8,7 @@ import { DataResolverService } from '../../services/data-resolver.service';
   // changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class TodoDataComponent {
+  isFirstTimeLoading = true;
   toDoList = [];
   deletedItem;
   loaderMessage;
@@ -19,12 +20,17 @@ export class TodoDataComponent {
 
   ngOnInit(){
     //this.changeDetectorRef.detectChanges();
+    this.loaderMessage = "Loading...";
+    this.isLoader = true;
     this.dataResolverService.getToDoDatas().subscribe(response=>{
       console.log('getToDoDatas(): ',response)
       this.toDoList = response;
+      this.isFirstTimeLoading = false;
+      this.isLoader = false; 
     },
     error=>{
       console.log('Error: ',error)
+      this.isLoader = false;
     });
   }
 

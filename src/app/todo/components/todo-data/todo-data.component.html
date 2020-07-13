@@ -11,16 +11,18 @@
     <ng-container *ngIf="isLoader">
         {{loaderMessage}}
         <mat-progress-bar mode="indeterminate" class="mb-3"></mat-progress-bar>
-    </ng-container>    
-
-    <ng-container *ngIf="toDoList.length>0;else noDataFound">
-        <div  *ngFor="let item of toDoList;" class="row">
-            <app-todo-list
-                [toDoItem]="item"                
-                (deleteItem)="deleteItem($event)"
-                class="col-12">
-            </app-todo-list>
-        </div>
     </ng-container>
-    <ng-template #noDataFound>No ToDo data found.</ng-template>
+    <ng-container *ngIf="!isFirstTimeLoading">
+        <ng-container *ngIf="toDoList.length>0;else noDataFound">
+            <div *ngFor="let item of toDoList;" class="row">
+                <app-todo-list
+                    [toDoItem]="item"
+                    (deleteItem)="deleteItem($event)"
+                    class="col-12">
+                </app-todo-list>
+            </div>
+        </ng-container>
+        <ng-template #noDataFound><div class="alert alert-danger">No ToDo data
+                found.</div></ng-template>
+    </ng-container>
 </div>
